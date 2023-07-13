@@ -1,7 +1,8 @@
 **imdb-movie-recommendation-tool**
 
 Unlike other forms of media I consume, I don't really have a record of what film's I've seen, and when struggling for something to watch I came up with the idea to (hopefully) automate that decision. 
-Therefore, I decided to create a simple spreadsheet to collate the films I've watched. An apple script is utilised to convert an apple numbers file containing this information to a CSV, so it can be inputted into a SQLite database to build a recommendation model that will apply different weights after a continuous development cycle. 
+
+Therefore, I decided to create a simple spreadsheet to collate the films I've watched. An apple script is utilised to convert an apple numbers file containing this information to a CSV, so it can be inputted into a SQLite database for model development. 
 
 Whilst a great open api exists (kudos to those at https://www.omdbapi.com/), I decided to use selenium and beautiful soup to scrape information for 500 films on the imdb database due to the fact that more information is available. 
 
