@@ -7,35 +7,31 @@ Whilst a great open api exists (kudos to those at https://www.omdbapi.com/), I d
 
 For context, these are the datapoints available on the api: 
 
-
-By ID or Title
-Parameter	Required	Valid Options	Default Value	Description
-i	Optional*		<empty>	A valid IMDb ID (e.g. tt1285016)
-t	Optional*		<empty>	Movie title to search for.
-type	No	movie, series, episode	<empty>	Type of result to return.
-y	No		<empty>	Year of release.
-plot	No	short, full	short	Return short or full plot.
-r	No	json, xml	json	The data type to return.
-callback	No		<empty>	JSONP callback name.
-v	No		1	API version (reserved for future use).*Please note while both "i" and "t" are optional at least one argument is required.
-
-
-By Search
-Parameter	Required	Valid options	Default Value	Description
-s	Yes		<empty>	Movie title to search for.
-type	No	movie, series, episode	<empty>	Type of result to return.
-y	No		<empty>	Year of release.
-r	No	json, xml	json	The data type to return.
-page New!	No	1-100	1	Page number to return.
-callback	No		<empty>	JSONP callback name.
-v	No		1	API version (reserved for future use).
+Description
+IMDb ID 
+Movie title 
+Type of result to return.
+Year of release.
+plot.
 
 Whereas our script creates the following information:
+1. `runtime`: The runtime of the movie
+2. `age_rating`: The age rating of the movie
+3. `release_year`: The release year of the movie
+4. `metascore`: The metascore of the movie
+5. `awards`: The awards that the movie received
+6. `director`: The director of the movie
+7. `writers`: The writers of the movie
+8. `stars`: The stars of the movie
+9. `storyline`: The storyline of the movie
+10. `genre`: The genre of the movie
+11. `country_of_origin`: The country of origin of the movie
+12. `language`: The language of the movie
 ...
 
-Therefore Selenium is used to automate the collection of html data, which is then parsed using a mixture of beautifulsoup and regex to remove javascript and CSCS information for quick and easy analysis. 
+Selenium is used to automate the collection of html data, which is then parsed using a mixture of beautifulsoup and regex to remove javascript and CSCS information for quick and easy analysis. 
 
-Moreover I intend to scrape reviews, although this will be given significantly less weight than critical reviews.  
+Moreover I intend to scrape reviews, although this will be given significantly less weight in the model than reviews by critics. 
 
 There is a view to also scrape other famous movie dbs to provide a more comprehensive model, vs. simply just using imdb. 
 
